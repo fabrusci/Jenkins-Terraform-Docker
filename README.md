@@ -2,6 +2,7 @@
 
 ### What is Jenkins?
 
+
 Jenkins is a free and open-source CI/CD automation server. It helps to automate the parts of the software development lifecycle i.e building, testing, and deploying the code to various servers.
 
 ![3](https://github.com/DhruvinSoni30/Jenkins-Terraform-Docker/blob/main/3.png)
