@@ -17,11 +17,7 @@ pipeline {
 
     stage('MyStage') {
       steps {
-        
-        withCredentials([sshUserPrivateKey(credentialsId: 'TEST-Envi', keyFileVariable: '', usernameVariable: 'fabrusci')]) {
-        sh "echo $fabrusci"
-        
-}
+      sh 'env'
       }
     }
 
