@@ -16,7 +16,7 @@ pipeline {
 
     stage('MyStage') {
       steps {
-        sh 'eho "MyStage"'
+        sh 'echo "MyStage"'
       }
     }
 
