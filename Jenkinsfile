@@ -7,10 +7,21 @@ pipeline {
   }
   stages {
     stage('build') {
-      steps {
-        sh 'node --version'
-        sh '''echo "pippo"
+      parallel {
+        stage('build') {
+          steps {
+            sh 'node --version'
+            sh '''echo "pippo"
 '''
+          }
+        }
+
+        stage('ppp') {
+          steps {
+            sh 'echo "ppp"'
+          }
+        }
+
       }
     }
 
