@@ -6,6 +6,9 @@ pipeline {
             steps {
                 sh 'node --version'
             }
+            steps {
+                sh 'node --version'
+            }
         }
     }
 }
