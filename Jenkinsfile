@@ -16,7 +16,7 @@ pipeline {
             echo "SSH Key: $SSH_KEY"
 
             // Use the private key for some operation (e.g., connecting to a remote server)
-            # sh 'ssh -i $SSH_KEY user@remote-server "echo Hello, world!"'
+            // sh 'ssh -i $SSH_KEY user@remote-server "echo Hello, world!"'
           }
       }
     }
