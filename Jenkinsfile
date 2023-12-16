@@ -10,7 +10,7 @@ pipeline {
     stage('build') {
       steps {
         sh 'node --version'
-        sh '''echo "pluto'''
+        sh '''echo "pluto"'''
         withCredentials([sshUserPrivateKey(credentialsId: 'my-ssh-key', keyFileVariable: 'SSH_KEY')]) {
             // Inside this block, SSH_KEY variable is available
             echo "SSH Key: $SSH_KEY"
