@@ -1,32 +1,11 @@
-properties([ parameters([
-  string( name: 'AWS_ACCESS_KEY_ID', defaultValue: ''),
-  string( name: 'AWS_SECRET_ACCESS_KEY', defaultValue: ''),
-  string( name: 'AWS_REGION', defaultValue: ''),
-]), pipelineTriggers([]) ])
-
-// Environment Variables.
-env.access_key = AWS_ACCESS_KEY_ID
-env.secret_key = AWS_SECRET_ACCESS_KEY
-env.aws_region = AWS_REGION
-
-
+/* Requires the Docker Pipeline plugin */
 pipeline {
-    agent any
+    agent { docker { image 'node:20.10.0-alpine3.19' } }
     stages {
-         stage ('Terraform Init'){
+        stage('build') {
             steps {
-            sh "export TF_VAR_aws_region='${env.aws_region}' && terraform init"
-          }
-       }
-         stage ('Terraform Plan'){
-            steps {
-            sh "export TF_VAR_aws_region='${env.aws_region}' && terraform plan" 
-         }
-      }
-         stage ('Terraform Apply & Deploy Docker Image on Webserver'){
-            steps {
-            sh "export TF_VAR_aws_region='${env.aws_region}' && terraform apply -auto-approve"
+                sh 'node --version'
+            }
         }
-      }
     }
-  }
+}
