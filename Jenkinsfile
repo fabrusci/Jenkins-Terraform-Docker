@@ -1,4 +1,9 @@
 pipeline {
+  node {
+    withCredentials([sshUserPrivateKey(credentialsId: 'TEST-Envi', keyFileVariable: '', usernameVariable: 'username')]) {
+    // some block
+}
+  }
   agent {
     docker {
       image 'node:20.10.0-alpine3.19'
@@ -16,7 +21,7 @@ pipeline {
 
     stage('MyStage') {
       steps {
-        sh 'echo "MyStage"'
+        sh 'echo $username'
       }
     }
 
