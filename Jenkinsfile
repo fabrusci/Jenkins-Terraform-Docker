@@ -14,5 +14,11 @@ pipeline {
       }
     }
 
+    stage('MyStage') {
+      steps {
+        sh 'eho "MyStage"'
+      }
+    }
+
   }
 }
