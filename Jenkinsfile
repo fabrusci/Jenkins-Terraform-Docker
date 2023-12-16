@@ -10,7 +10,7 @@ pipeline {
     stage('build') {
       steps {
         sh 'node --version'
-        sh '''echo "pippo"
+        sh '''echo "pluto"
 '''
       }
     }
