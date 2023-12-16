@@ -19,7 +19,7 @@ pipeline {
       steps {
         
         withCredentials([sshUserPrivateKey(credentialsId: 'TEST-Envi', keyFileVariable: '', usernameVariable: 'fabrusci')]) {
-        sh 'echo $fabrusci'
+        sh "echo $fabrusci"
         
 }
       }
