@@ -1,3 +1,4 @@
+@Library('shared-library')_
 pipeline {
   
   agent {
@@ -28,6 +29,7 @@ pipeline {
     stage('MyStage') {
       steps {
       sh 'env'
+      echo(getPulumiStack())
       }
     }
 
