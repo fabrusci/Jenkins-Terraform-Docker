@@ -29,7 +29,6 @@ pipeline {
     stage('MyStage') {
       steps {
       sh 'env'
-      echo(getPulumiStack())
       }
     }
 
