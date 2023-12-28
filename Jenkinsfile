@@ -14,7 +14,7 @@ pipeline {
      stage('Setup tools') {
       steps {
         sh (
-          script '''#!/bin/bash
+          script: '''#!/bin/bash
                     asdf update
                  '''
         )
