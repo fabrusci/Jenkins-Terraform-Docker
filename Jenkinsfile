@@ -8,8 +8,10 @@ pipeline {
     node { label 'agent1' }
 
   }
+
   stages {
-    stage('Setup tools') {
+
+     stage('Setup tools') {
       steps {
         sh {
           script '''#!/bin/bash
@@ -19,11 +21,8 @@ pipeline {
       }
     }
 
-  stages {
     stage('build') {
       steps {
-        sh 'node --version'
-        sh '''echo "pluto"'''
         withCredentials([sshUserPrivateKey(credentialsId: 'TEST-Envi', keyFileVariable: 'SSH_KEY')]) {
             // Inside this block, SSH_KEY variable is available
             //sh '''
