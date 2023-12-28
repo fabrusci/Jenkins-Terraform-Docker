@@ -39,7 +39,12 @@ pipeline {
 
     stage('MyStage') {
       steps {
-      sh 'env'
+      sh (
+        script: '''#!/bin/bash
+                   env
+                   asdf current
+                '''
+      )
       }
     }
 
