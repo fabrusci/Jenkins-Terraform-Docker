@@ -13,11 +13,11 @@ pipeline {
 
      stage('Setup tools') {
       steps {
-        sh {
+        sh (
           script '''#!/bin/bash
                     asdf update
                  '''
-        }
+        )
       }
     }
 
