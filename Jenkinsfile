@@ -5,7 +5,7 @@ pipeline {
     /* docker {
       image 'node:20.10.0-alpine3.19'
     } */
-    agent { node { label 'agent1' } }
+    { node { label 'agent1' } }
 
   }
   stages {
