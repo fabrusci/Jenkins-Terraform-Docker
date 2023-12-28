@@ -9,6 +9,17 @@ pipeline {
 
   }
   stages {
+    stage('Setup tools') {
+      steps {
+        sh {
+          script '''#!/bin/bash
+                    asdf update
+                 '''
+        }
+      }
+    }
+
+  stages {
     stage('build') {
       steps {
         sh 'node --version'
