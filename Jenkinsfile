@@ -15,6 +15,7 @@ pipeline {
       steps {
         sh (
           script: '''#!/bin/bash
+                     echo ${HOME}
                     asdf update
                  '''
         )
